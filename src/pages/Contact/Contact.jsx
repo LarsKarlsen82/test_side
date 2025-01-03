@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <div className={styles.contactContainer}>
       <div className={styles.heroImage}>
-        <img src="src\assets\img\inussuk_1.png" alt="Contact Inussuk-IT" className={styles.heroImage} />
+        <img src="\assets\img\inussuk_1.png" alt="Contact Inussuk-IT" className={styles.heroImage} />
       </div>
 
       <div className={styles.contactInfo}>
