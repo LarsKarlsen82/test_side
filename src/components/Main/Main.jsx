@@ -8,7 +8,7 @@ const Main = () => {
       <div className={styles['image-row']}>
         <div className={styles['image-column']}>
           <div className={styles['image-module']}>
-            <img src="/src/assets/img/Cash.jpg" alt="Cash" />
+            <img src="/assets/img/Cash.jpg" alt="Cash" />
           </div>
           <div className={styles['image-module']}>
             <div className={styles['image-promo_description']}>
@@ -32,7 +32,7 @@ const Main = () => {
             </div>
           </div>
           <div className={styles['image-module']}>
-            <img src="/src/assets/img/sumi.jpg" alt="sumi" />
+            <img src="/assets/img/sumi.jpg" alt="sumi" />
           </div>
         </div>
       </div>
