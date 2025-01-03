@@ -18,8 +18,8 @@ const Footer = () => {
         <h3>Kontakt</h3>
         <p><b>Inussuk-IT</b> - Grønlands Fællesoffentlige IT</p>
         <br />
-        <p>CVR: 42086231
-        GLN: 5790001954246</p>
+        <p>CVR: 42086231 </p>
+        <p>GLN: 5790001954246</p>
         <br />
         <p>support@inussuk-it.gl</p>
         <p>Tlf: +299 34 52 30</p>
