@@ -124,9 +124,7 @@
 //   }
 // }
 
-
 @import '../../assets/css/Variables.scss';
-
 .NavBar {
   position: fixed;
   top: 0;
@@ -148,6 +146,15 @@
       .Leo {
         color: $Blue;
       }
+    }
+  }
+  .LogoLink {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Use the parent text color */
+    cursor: pointer; /* Change cursor to pointer */
+    
+    &:hover {
+      text-decoration: underline; /* Optional hover effect */
     }
   }
 
@@ -191,20 +198,29 @@
   }
 
   .Dropdown {
+    position: relative;
+
     .DropdownMenu {
       display: none;
       position: absolute;
-      list-style: none;
+      top: 100%;
+      left: 0;
       background-color: $White;
-      margin: 0;
+      list-style: none;
       padding: 1em 0;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 
       li {
-        padding: 0.5em;
-        &:hover {
-          background-color: lightgrey;
-        }
+        padding: 0.5em 1.5em;
       }
+
+      li:hover {
+        background-color: lightgrey;
+      }
+    }
+
+    &.ActiveDropdown .DropdownMenu {
+      display: block;
     }
   }
 
@@ -227,6 +243,19 @@
 
     .Hamburger {
       display: block;
+    }
+
+    .Dropdown {
+      .DropdownMenu {
+        position: static;
+        display: block;
+        box-shadow: none;
+        padding: 0;
+      }
+
+      li {
+        padding: 0.5em 1em;
+      }
     }
   }
 }

@@ -74,7 +74,7 @@
 // export default AppRoutes;
 
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
 import Home from '../Home/Home';
 import Support from '../Support/Support';
@@ -105,6 +105,24 @@ const ScrollToTopLink = ({ to, children, onClick }) => {
 
 const AppRoutes = () => {
   const [menuActive, setMenuActive] = useState(false);
+  const [dropdownActive, setDropdownActive] = useState(false);
+
+  // Reset menu and dropdown states on resize
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setMenuActive(false);
+        setDropdownActive(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const toggleMenu = () => {
     setMenuActive((prev) => !prev);
@@ -112,6 +130,7 @@ const AppRoutes = () => {
 
   const closeMenu = () => {
     setMenuActive(false);
+    setDropdownActive(false);
   };
 
   return (
@@ -120,7 +139,9 @@ const AppRoutes = () => {
         <div className={styles.NavContainer}>
           {/* Logo */}
           <h2 className={styles.H2Right}>
-            <span className={styles.Leo}>Inussuk</span>-IT
+          <Link to="/" className={styles.LogoLink}> {/* Wrap with Link */}
+        <span className={styles.Leo}>Inussuk</span>-IT
+      </Link>
           </h2>
 
           {/* Hamburger Menu */}
@@ -142,12 +163,32 @@ const AppRoutes = () => {
             }`}
           >
             <li><ScrollToTopLink to="/" onClick={closeMenu}>Hjem</ScrollToTopLink></li>
-            <li className={styles.Dropdown}>
-              <ScrollToTopLink to="/support" onClick={closeMenu}>Support</ScrollToTopLink>
+            <li
+              className={`${styles.Dropdown} ${
+                dropdownActive ? styles.ActiveDropdown : ''
+              }`}
+              onMouseEnter={() => setDropdownActive(true)}
+              onMouseLeave={() => setDropdownActive(false)}
+            >
+              <ScrollToTopLink to="/support" onClick={closeMenu}>
+                Support
+              </ScrollToTopLink>
               <ul className={styles.DropdownMenu}>
-                <li><ScrollToTopLink to="/support/axprisme" onClick={closeMenu}>AX-Prisme</ScrollToTopLink></li>
-                <li><ScrollToTopLink to="/support/mindkey" onClick={closeMenu}>Mindkey</ScrollToTopLink></li>
-                <li><ScrollToTopLink to="/support/go" onClick={closeMenu}>Get Organized</ScrollToTopLink></li>
+                <li>
+                  <ScrollToTopLink to="/support/axprisme" onClick={closeMenu}>
+                    AX-Prisme
+                  </ScrollToTopLink>
+                </li>
+                <li>
+                  <ScrollToTopLink to="/support/mindkey" onClick={closeMenu}>
+                    Mindkey
+                  </ScrollToTopLink>
+                </li>
+                <li>
+                  <ScrollToTopLink to="/support/go" onClick={closeMenu}>
+                    Get Organized
+                  </ScrollToTopLink>
+                </li>
               </ul>
             </li>
             <li><ScrollToTopLink to="/om" onClick={closeMenu}>Om Inussuk-IT</ScrollToTopLink></li>
