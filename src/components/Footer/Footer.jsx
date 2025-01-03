@@ -58,9 +58,16 @@ const Footer = () => {
             <FaLinkedin style={{ color: 'white', height: '30px', width: '30px', padding: '10px 20px 0 0'  }} />
           </a>
         </div>
+        <br />
+        <br />
+        <br />
+        <div className={styles.right}>© Lars Karlsen, 2025</div>
       </div>
+      
     </footer>
+    
   );
 };
+
 
 export default Footer;
