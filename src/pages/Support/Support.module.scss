@@ -1,0 +1,51 @@
+.SupportsContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  padding: 130px;
+}
+
+.supportCard {
+  text-align: center;
+  width: 300px;
+  margin: 0 15px;
+}
+
+.SupportImage {
+  width: 100%;
+  height: 65%;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.supportName {
+  color: #333;
+  font-size: 1.5em;
+  margin-bottom: 5px;
+}
+
+.supportDescription {
+  color: #666;
+  font-size: 1.1em;
+}
+
+ul {
+  list-style-type: none; /* Removes the bullet points */
+  padding-left: 0; /* Ensures no indentation */
+}
+
+.SupportLink {
+  text-decoration: none;
+  color: #0066cc; /* Adjust link color */
+}
+
+.SupportLink:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .lawyerCard {
+    width: 300px;
+  }
+}

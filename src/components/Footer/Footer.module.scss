@@ -1,0 +1,82 @@
+@import '../../assets/css/Variables.scss';
+
+// Define mixin for link styles
+@mixin linkStyles {
+  text-decoration: none;
+  color: $White;
+
+  &:hover {
+    text-decoration: underline; // Example: Underline on hover, adjust as needed
+  }
+}
+
+// Define mixin for social icons
+@mixin socialIconStyles {
+  margin-right: 15px; // Adjust spacing between icons
+  display: inline-block; // Change display property to inline-block
+}
+
+footer {
+  display: flex;
+  flex-wrap: wrap; // Allow flex items to wrap to the next line if needed
+  justify-content: space-around;
+  background-color: $NavyBlue;
+  padding: 20px;
+
+  div {
+    text-align: left; // Align text to the left
+    max-width: 200px;
+    margin-bottom: 20px; // Add spacing between divs
+
+    h3 {
+      color: $White;
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: $White;
+      font-size: 1em;
+      margin: 0; // Remove default margin
+    }
+
+    a {
+      @include linkStyles; // Include the link styles mixin
+    }
+  }
+
+  .social-media {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; // Center-align text inside social-media div
+
+    .social-icons {
+      display: flex;
+      justify-content: center; // Center-align icons
+
+      a {
+        @include socialIconStyles; // Include the social icon styles mixin
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .image-section .image-row .image-column .image-module {
+      width: 100%;
+      padding: 15px;
+      margin-top: 160vh;
+    }
+
+    .image-module h2 {
+      text-align: center;
+      padding: 0 0 1em 0;
+    }
+
+    .image-module p {
+      text-align: left;
+      padding: 1em 1em 0 1em; /* Adjust padding for smaller screens */
+      font-family: 'Inter';
+    }
+  }
+}

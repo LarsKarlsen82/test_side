@@ -1,0 +1,48 @@
+// About.module.scss
+
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 200px;
+}
+
+.hero-image {
+  width: 100%;
+  height: 300px; /* Adjust the height as needed */
+  overflow: hidden;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-heading {
+  color: #333;
+  font-size: 2em;
+  margin-top: 20px; /* Add spacing between hero image and heading */
+}
+
+.about-content {
+  color: #666;
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+@media (max-width: 768px) {
+  .about-container {
+    padding: 10px; /* Adjust padding for even smaller screens */
+  }
+
+  .hero-image {
+    max-height: 200px; /* Adjust max-height for smaller screens */
+  }
+
+  .about-heading {
+    font-size: 1.5em; /* Adjust font size for smaller screens */
+  }
+
+  .about-content {
+    font-size: 1em; /* Adjust font size for smaller screens */
+  }
+}

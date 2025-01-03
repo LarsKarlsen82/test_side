@@ -1,0 +1,123 @@
+@import '../../assets/css/Variables.scss';
+
+/* General container for the header */
+.Container {
+  position: relative;
+  z-index: 1;
+  display: flex; /* Arrange elements horizontally */
+  align-items: flex-start;
+  gap: 20px; /* Add spacing between elements */
+  padding: 20px;
+}
+
+/* Driftsinfo box styles */
+.Driftsinfo {
+  width: 300px;
+  background-color: rgba(173, 216, 230, 0.8);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: $Dark;
+  margin-top: 100px;
+  z-index: 2; /* Ensure the info box is on top of the hero */
+  position: absolute; /* Absolute positioning to overlap with hero */
+  top: 5%; /* Adjust the vertical position relative to the container */
+  left: 25%; /* Adjust the horizontal position relative to the container */
+
+  h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 1em;
+    line-height: 1.5;
+  }
+}
+
+/* DriftsinfoRed box styles */
+.DriftsinfoRed {
+  width: 300px;
+  background-color: rgba(255, 204, 204, 0.8); /* Light red background */
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px solid red;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: $Dark;
+  margin-top: 100px;
+  z-index: 2; /* Ensure this box is on top of the hero */
+  position: absolute; /* Absolute positioning to overlap with hero */
+  top: 5%; /* Adjust the vertical position relative to the container */
+  left: 5%; /* Adjust the horizontal position relative to the container */
+
+  h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 1em;
+    line-height: 1.5;
+  }
+}
+
+/* Hero section styles */
+.Hero {
+  flex: 1;
+  z-index: 1; /* Hero is in the background */
+  position: relative;
+  background-image: url('../../../assets/img/Hero_image.jpg'); /* Keep original background */
+  height: 70vh;
+  width: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  padding-top: 140px;
+
+  h1 {
+    font-size: 8em;
+    font-weight: 100;
+    margin-bottom: 10px;
+    text-align: right;
+    margin-right: 10px;
+    color: $White;
+  }
+
+  p {
+    text-align: right;
+    margin-right: 20px;
+  }
+
+  padding: 10px;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 768px) {
+  .Container {
+    flex-direction: column; /* Stack boxes vertically on smaller screens */
+    align-items: center;
+  }
+
+  .Driftsinfo,
+  .DriftsinfoRed {
+    width: 90%; /* Adjust width for small screens */
+  }
+
+  .Hero {
+    padding: 50px;
+    text-align: center;
+
+    h1 {
+      font-size: 4em;
+      margin-right: 0;
+    }
+
+    p {
+      margin-right: 0;
+    }
+  }
+}
