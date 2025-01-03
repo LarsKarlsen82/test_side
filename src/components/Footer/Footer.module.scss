@@ -1,3 +1,90 @@
+// @import '../../assets/css/Variables.scss';
+
+// // Define mixin for link styles
+// @mixin linkStyles {
+//   text-decoration: none;
+//   color: $White;
+
+//   &:hover {
+//     text-decoration: underline; // Example: Underline on hover, adjust as needed
+//   }
+// }
+
+// // Define mixin for social icons
+// @mixin socialIconStyles {
+//   margin-right: 15px; // Adjust spacing between icons
+//   display: inline-block; // Change display property to inline-block
+// }
+
+// footer {
+//   display: flex;
+//   flex-wrap: wrap; // Allow flex items to wrap to the next line if needed
+//   justify-content: space-around;
+//   background-color: $NavyBlue;
+//   padding: 20px;
+
+//   div {
+//     text-align: left; // Align text to the left
+//     max-width: 200px;
+//     margin-bottom: 20px; // Add spacing between divs
+
+//     h3 {
+//       color: $White;
+//       font-size: 1.2em;
+//       margin-bottom: 10px;
+//     }
+
+//     p {
+//       color: $White;
+//       font-size: 1em;
+//       margin: 0; // Remove default margin
+//     }
+
+//     a {
+//       @include linkStyles; // Include the link styles mixin
+//     }
+//   }
+
+//   .social-media {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     text-align: center; // Center-align text inside social-media div
+
+//     .social-icons {
+//       display: flex;
+//       justify-content: center; // Center-align icons
+
+//       a {
+//         @include socialIconStyles; // Include the social icon styles mixin
+//       }
+//     }
+//   }
+//   .right{
+//     color: white;
+//   }
+
+//   @media (max-width: 768px) {
+//     .image-section .image-row .image-column .image-module {
+//       width: 100%;
+//       padding: 15px;
+//       margin-top: 160vh;
+//     }
+
+//     .image-module h2 {
+//       text-align: center;
+//       padding: 0 0 1em 0;
+//     }
+
+//     .image-module p {
+//       text-align: left;
+//       padding: 1em 1em 0 1em; /* Adjust padding for smaller screens */
+//       font-family: 'Inter';
+//     }
+//   }
+// }
+
+
 @import '../../assets/css/Variables.scss';
 
 // Define mixin for link styles
@@ -6,7 +93,7 @@
   color: $White;
 
   &:hover {
-    text-decoration: underline; // Example: Underline on hover, adjust as needed
+    text-decoration: underline; // Example: Underline on hover
   }
 }
 
@@ -18,7 +105,7 @@
 
 footer {
   display: flex;
-  flex-wrap: wrap; // Allow flex items to wrap to the next line if needed
+  flex-wrap: wrap; // Allow flex items to wrap
   justify-content: space-around;
   background-color: $NavyBlue;
   padding: 20px;
@@ -26,7 +113,7 @@ footer {
   div {
     text-align: left; // Align text to the left
     max-width: 200px;
-    margin-bottom: 20px; // Add spacing between divs
+    margin-bottom: 20px; // Spacing between sections
 
     h3 {
       color: $White;
@@ -41,7 +128,7 @@ footer {
     }
 
     a {
-      @include linkStyles; // Include the link styles mixin
+      @include linkStyles; // Apply link styles
     }
   }
 
@@ -56,30 +143,47 @@ footer {
       justify-content: center; // Center-align icons
 
       a {
-        @include socialIconStyles; // Include the social icon styles mixin
+        @include socialIconStyles; // Apply social icon styles
       }
     }
-  }
-  .right{
-    color: white;
+
+    .right {
+      color: white;
+      font-size: 0.9em; // Adjust font size
+      margin-top: 15px;
+    }
   }
 
+  // Adjust footer layout for small screens
   @media (max-width: 768px) {
-    .image-section .image-row .image-column .image-module {
-      width: 100%;
-      padding: 15px;
-      margin-top: 160vh;
+    flex-direction: column; // Stack sections vertically
+    align-items: center;
+
+    div {
+      text-align: center; // Center-align text on small screens
+      max-width: 100%; // Full width for sections
+      margin-bottom: 10px; // Reduce spacing for compact layout
+
+      h3 {
+        font-size: 1em; // Adjust heading size for smaller screens
+      }
+
+      p {
+        font-size: 0.9em; // Adjust paragraph font size
+      }
     }
 
-    .image-module h2 {
-      text-align: center;
-      padding: 0 0 1em 0;
-    }
+    .social-media {
+      margin-top: 20px; // Add spacing above social media section
 
-    .image-module p {
-      text-align: left;
-      padding: 1em 1em 0 1em; /* Adjust padding for smaller screens */
-      font-family: 'Inter';
+      .social-icons {
+        gap: 10px; // Adjust spacing between icons
+      }
+
+      .right {
+        margin-top: 10px; // Reduce spacing at the bottom
+        font-size: 0.8em; // Adjust font size for copyright text
+      }
     }
   }
 }
