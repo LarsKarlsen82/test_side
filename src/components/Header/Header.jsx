@@ -52,7 +52,9 @@ export const Header = () => {
         {/* Driftsinfo box */}
         <div className={styles.Driftsinfo}>
           <h2>Driftsinfo</h2>
+          <br />
           <p>03-01-2025</p>
+          <br />
           <p>Der er planlagt vedligeholdelse på vores systemer d. 5. januar mellem kl. 22:00 og 04:00. 
             Tjenester kan være ustabile i denne periode.</p>
           <br />
@@ -63,7 +65,9 @@ export const Header = () => {
         {/* DriftsinfoRed box */}
         <div className={styles.DriftsinfoRed}>
           <h2>Vigtig Info</h2>
+          <br />
           <p>03-01-2025</p>
+          <br />
           <p>Der opleves i øjeblikket udfordringer med login til AX-Prisme. Vi arbejder på at løse problemet og beklager ulejligheden.</p>
           <br />
           <p>Med venlig hilsen</p>
