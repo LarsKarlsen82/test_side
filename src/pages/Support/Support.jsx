@@ -7,7 +7,7 @@ const Support = () => {
     <div className={styles.SupportsContainer}>
       <div className={styles.supportCard}>
         <img
-          src="src/assets/img/support.jpg"
+          src="/assets/img/support.jpg"
           alt="Support 1"
           className={styles.SupportImage}
         />
@@ -21,7 +21,7 @@ const Support = () => {
 
       <div className={styles.supportCard}>
         <img
-          src="src/assets/img/point.jpg"
+          src="/assets/img/point.jpg"
           alt="Point"
           className={styles.SupportImage}
         />
