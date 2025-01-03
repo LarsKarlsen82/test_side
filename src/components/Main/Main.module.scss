@@ -75,7 +75,7 @@
     }
 
     .image-column {
-      width: 90%; /* Full width for columns */
+      width: 100%; /* Full width for columns */
       display: flex;
       flex-direction: column; /* Stack elements vertically */
       align-items: center;
@@ -92,17 +92,19 @@
         }
 
         h2 {
-          font-size: 1.1em; /* Adjust heading size */
+          font-size: 0.8em; /* Adjust heading size */
           margin: 10px 0;
           text-align: center; /* Ensure centered alignment */
         }
 
         p {
           // padding: 0 1em; /* Adjust padding for small screens */
-          margin: 0 3em 0 4em;
+          margin: 0 7em 3em 7em;
           width: 100%; /* Make the paragraph take up full width */
           box-sizing: border-box; /* Include padding in width */
           text-align: justify; /* Keep text alignment for readability */
+          font-size: 0.7em;
+        
         }
       }
     }
