@@ -1,19 +1,22 @@
 .SupportsContainer {
   display: flex;
-  justify-content: space-around;
-  margin-top: 20px;
-  padding: 130px;
+  flex-wrap: wrap; /* Allow items to wrap for small screens */
+  justify-content: center; /* Center the cards */
+  gap: 20px; /* Add spacing between cards */
+  margin-top: 150px;
+  padding: 20px; /* Reduce padding for better responsiveness */
 }
 
 .supportCard {
   text-align: center;
-  width: 300px;
-  margin: 0 15px;
+  width: 90%; /* Default width for smaller screens */
+  max-width: 300px; /* Restrict maximum width */
+  margin: 0 auto; /* Center the card horizontally */
 }
 
 .SupportImage {
   width: 100%;
-  height: 65%;
+  height: 70%; /* Set a fixed height for consistent layout */
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 10px;
@@ -22,22 +25,25 @@
 .supportName {
   color: #333;
   font-size: 1.5em;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .supportDescription {
   color: #666;
   font-size: 1.1em;
+  margin-bottom: 15px;
 }
 
 ul {
-  list-style-type: none; /* Removes the bullet points */
-  padding-left: 0; /* Ensures no indentation */
+  list-style-type: none;
+  padding-left: 0;
 }
 
 .SupportLink {
   text-decoration: none;
-  color: #0066cc; /* Adjust link color */
+  color: #0066cc;
+  display: block; /* Ensure links stack vertically */
+  margin-bottom: 5px; /* Add spacing between links */
 }
 
 .SupportLink:hover {
@@ -45,7 +51,25 @@ ul {
 }
 
 @media (max-width: 768px) {
-  .lawyerCard {
-    width: 300px;
+  .SupportsContainer {
+    flex-direction: column; /* Stack cards vertically */
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+
+  .supportCard {
+    width: 100%; /* Full width on small screens */
+    margin: 10px 0; /* Add spacing between cards */
+  }
+
+  .SupportImage {
+    height: 150px; /* Reduce image height for better fit */
+  }
+
+  .supportName {
+    font-size: 1.2em; /* Reduce font size for smaller screens */
+  }
+
+  .supportDescription {
+    font-size: 1em; /* Adjust text size */
   }
 }
