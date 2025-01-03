@@ -1,78 +1,175 @@
-.AxprismeContainer {
-    padding: 20px;
-    background-color: #f4f9ff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 70px;
-    text-align: left; /* Changed to left so h2 aligns correctly */
-  }
+// .AxprismeContainer {
+//     padding: 20px;
+//     background-color: #f4f9ff;
+//     border-radius: 8px;
+//     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+//     margin: 70px;
+//     text-align: left; /* Changed to left so h2 aligns correctly */
+//   }
   
-  h2 {
-    font-size: 2.5em; /* Adjust size as needed */
-    color: #333; /* Ensure it's visible */
+//   h2 {
+//     font-size: 2.5em; /* Adjust size as needed */
+//     color: #333; /* Ensure it's visible */
  
-  }
+//   }
   
-  .AxprismeHeader {
+//   .AxprismeHeader {
+//     font-size: 2em;
+//     color: #333;
+//     margin-bottom: 10px;
+//   }
+  
+//   .AxprismeText {
+//     font-size: 1.2em;
+//     color: #555;
+//     line-height: 1.6;
+//     margin: 0 auto;
+//     padding-left: 20px;
+//   }
+  
+//   /* Style for each section */
+//   .Section {
+//     margin: 20px 0;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: flex-start;
+//   }
+  
+//   /* Style for the toggle buttons (plus signs) */
+//   .ToggleButton {
+//     font-size: 1.5em;
+//     cursor: pointer;
+//     font-weight: bold;
+//     color: #007BFF;
+//     padding: 10px;
+//     border: 1px solid #007BFF;
+//     border-radius: 5px;
+//     display: inline-block;
+//     width: 100%;
+//     text-align: left;
+//     transition: background-color 0.3s ease;
+//   }
+  
+//   .ToggleButton:hover {
+//     background-color: #f0f8ff;
+//   }
+  
+//   /* Style for the content inside each section */
+//   .SectionContent {
+//     font-size: 1.1em;
+//     color: #333;
+//     margin-top: 10px;
+//     padding: 10px;
+//     background-color: #e9f1ff;
+//     border-radius: 5px;
+//     overflow: hidden;
+//     max-height: 0; /* Initially collapsed */
+//     opacity: 0; /* Initially invisible */
+//     transition: max-height 0.3s ease-out, padding 0.3s ease-out, opacity 0.3s ease-out;
+//     display: block;
+//   }
+  
+//   /* Expanded state */
+//   .Expanded {
+//     max-height: 500px; /* Adjust max-height to a smaller value */
+//     opacity: 1; /* Make the content visible */
+//     padding: 20px; /* More padding when expanded for spacious feel */
+//   }
+
+
+.AxprismeContainer {
+  padding: 20px;
+  background-color: #f4f9ff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 70px auto; /* Center horizontally */
+  max-width: 800px; /* Limit the width on larger screens */
+}
+
+h2 {
+  font-size: 2.5em;
+  color: #333;
+  text-align: center; /* Center title on all screens */
+  margin-bottom: 20px;
+}
+
+.AxprismeHeader {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center; /* Center subtitle */
+}
+
+.AxprismeText {
+  font-size: 1.2em;
+  color: #555;
+  line-height: 1.6;
+  margin: 0 auto;
+  text-align: justify; /* Better readability */
+}
+
+.Section {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.ToggleButton {
+  font-size: 1.2em;
+  cursor: pointer;
+  font-weight: bold;
+  color: #007bff;
+  padding: 10px;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  text-align: left;
+  width: 100%;
+  background-color: #ffffff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.ToggleButton:hover {
+  background-color: #f0f8ff;
+  color: #0056b3;
+}
+
+.SectionContent {
+  font-size: 1.1em;
+  color: #333;
+  margin-top: 10px;
+  background-color: #e9f1ff;
+  border-radius: 5px;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  padding: 0 20px; /* Adjust padding */
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out, padding 0.3s ease-out;
+}
+
+.Expanded {
+  max-height: 500px;
+  opacity: 1;
+  padding: 10px 20px; /* Add padding when expanded */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .AxprismeContainer {
+    margin: 20px;
+    padding: 10px;
+  }
+
+  h2 {
     font-size: 2em;
-    color: #333;
-    margin-bottom: 10px;
   }
-  
-  .AxprismeText {
-    font-size: 1.2em;
-    color: #555;
-    line-height: 1.6;
-    margin: 0 auto;
-    padding-left: 20px;
-  }
-  
-  /* Style for each section */
-  .Section {
-    margin: 20px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  /* Style for the toggle buttons (plus signs) */
+
   .ToggleButton {
-    font-size: 1.5em;
-    cursor: pointer;
-    font-weight: bold;
-    color: #007BFF;
-    padding: 10px;
-    border: 1px solid #007BFF;
-    border-radius: 5px;
-    display: inline-block;
-    width: 100%;
-    text-align: left;
-    transition: background-color 0.3s ease;
+    font-size: 1em;
+    padding: 8px;
   }
-  
-  .ToggleButton:hover {
-    background-color: #f0f8ff;
-  }
-  
-  /* Style for the content inside each section */
+
   .SectionContent {
-    font-size: 1.1em;
-    color: #333;
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #e9f1ff;
-    border-radius: 5px;
-    overflow: hidden;
-    max-height: 0; /* Initially collapsed */
-    opacity: 0; /* Initially invisible */
-    transition: max-height 0.3s ease-out, padding 0.3s ease-out, opacity 0.3s ease-out;
-    display: block;
+    font-size: 1em;
   }
-  
-  /* Expanded state */
-  .Expanded {
-    max-height: 500px; /* Adjust max-height to a smaller value */
-    opacity: 1; /* Make the content visible */
-    padding: 20px; /* More padding when expanded for spacious feel */
-  }
-  
+}
