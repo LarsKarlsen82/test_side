@@ -1,141 +1,4 @@
-// @import '../../assets/css/Variables.scss';
-// .NavBar {
-//   position: fixed;
-//   top: 0;
-//   width: 100%;
-//   background-color: #ececec;
-//   z-index: 3;
-
-//   .NavContainer {
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     padding: 0 3em;
-//     border-bottom: 8px solid $Blue;
-
-//     .H2Right {
-//       color: $White;
-//       font-size: 2em;
-
-//       .Leo {
-//         color: $Blue;
-//       }
-//     }
-//   }
-//   .LogoLink {
-//     text-decoration: none; /* Remove underline */
-//     color: inherit; /* Use the parent text color */
-//     cursor: pointer; /* Change cursor to pointer */
-    
-//     &:hover {
-//       text-decoration: underline; /* Optional hover effect */
-//     }
-//   }
-
-//   .Hamburger {
-//     display: none;
-//     cursor: pointer;
-
-//     span {
-//       display: block;
-//       width: 25px;
-//       height: 3px;
-//       background-color: $Blue;
-//       margin: 5px 0;
-//     }
-//   }
-
-//   .NavList {
-//     display: flex;
-//     list-style: none;
-//     margin: 0;
-
-//     li {
-//       margin: 0 1.5em;
-
-//       a {
-//         text-decoration: none;
-//         color: $Blue;
-
-//         &:hover {
-//           color: grey;
-//         }
-//       }
-//     }
-
-//     &.Active {
-//       display: flex;
-//       flex-direction: column;
-//       align-items: flex-start;
-//       width: 100%;
-//     }
-//   }
-
-//   .Dropdown {
-//     position: relative;
-
-//     .DropdownMenu {
-//       display: none;
-//       position: absolute;
-//       top: 100%;
-//       left: 0;
-//       background-color: $White;
-//       list-style: none;
-//       padding: 1em 0;
-//       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-
-//       li {
-//         padding: 0.5em 1.5em;
-//       }
-
-//       li:hover {
-//         background-color: lightgrey;
-//       }
-//     }
-
-//     &.ActiveDropdown .DropdownMenu {
-//       display: block;
-//     }
-//   }
-
-//   @media (max-width: 768px) {
-//     .NavContainer {
-//       flex-direction: column;
-
-//       .NavList {
-//         display: none;
-
-//         &.Active {
-//           display: flex;
-//         }
-
-//         li {
-//           margin: 0.5em 0;
-//         }
-//       }
-//     }
-
-//     .Hamburger {
-//       display: block;
-//     }
-
-//     .Dropdown {
-//       .DropdownMenu {
-//         position: static;
-//         display: block;
-//         box-shadow: none;
-//         padding: 0;
-//       }
-
-//       li {
-//         padding: 0.5em 1em;
-//       }
-//     }
-//   }
-// }
-
 @import '../../assets/css/Variables.scss';
-
 .NavBar {
   position: fixed;
   top: 0;
@@ -145,7 +8,7 @@
 
   .NavContainer {
     display: flex;
-    justify-content: space-between; /* Default for large screens */
+    justify-content: space-between;
     align-items: center;
     padding: 0 3em;
     border-bottom: 8px solid $Blue;
@@ -159,19 +22,18 @@
       }
     }
   }
-
   .LogoLink {
     text-decoration: none; /* Remove underline */
     color: inherit; /* Use the parent text color */
     cursor: pointer; /* Change cursor to pointer */
-
+    
     &:hover {
       text-decoration: underline; /* Optional hover effect */
     }
   }
 
   .Hamburger {
-    display: none; /* Hidden by default */
+    display: none;
     cursor: pointer;
 
     span {
@@ -209,30 +71,42 @@
     }
   }
 
+  .Dropdown {
+    position: relative;
+
+    .DropdownMenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: $White;
+      list-style: none;
+      padding: 1em 0;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+
+      li {
+        padding: 0.5em 1.5em;
+      }
+
+      li:hover {
+        background-color: lightgrey;
+      }
+    }
+
+    &.ActiveDropdown .DropdownMenu {
+      display: block;
+    }
+  }
+
   @media (max-width: 768px) {
     .NavContainer {
-      flex-direction: column; /* Stack elements vertically */
-      justify-content: center; /* Center all elements */
-      align-items: center; /* Center all elements */
-      padding: 0;
-
-      .H2Right {
-        margin: 0;
-        text-align: center; /* Ensure text is centered */
-      }
-
-      .Hamburger {
-        display: block; /* Show hamburger on small screens */
-        margin-top: 0.5em; /* Add some space between elements if needed */
-      }
+      flex-direction: column;
 
       .NavList {
         display: none;
 
         &.Active {
           display: flex;
-          flex-direction: column;
-          align-items: center; /* Center menu items */
         }
 
         li {
@@ -240,5 +114,23 @@
         }
       }
     }
+
+    .Hamburger {
+      display: block;
+    }
+
+    .Dropdown {
+      .DropdownMenu {
+        position: static;
+        display: block;
+        box-shadow: none;
+        padding: 0;
+      }
+
+      li {
+        padding: 0.5em 1em;
+      }
+    }
   }
 }
+
