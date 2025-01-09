@@ -1,20 +1,5 @@
-
 // @import '../../assets/css/Variables.scss';
-
-// @mixin navLinkStyles {
-//   text-decoration: none;
-//   color: $Blue;
-//   text-transform: inherit;
-
-//   &:hover {
-//     text-decoration: none;
-//     color: grey;
-//     border-bottom-color: lightgrey; /* Highlight on hover */
-//   }
-// }
-
 // .NavBar {
-//   padding: 0;
 //   position: fixed;
 //   top: 0;
 //   width: 100%;
@@ -28,97 +13,122 @@
 //     padding: 0 3em;
 //     border-bottom: 8px solid $Blue;
 
-//     .NavList {
-//       display: flex;
-//       list-style: none;
-//       margin: 0;
-
-//       li {
-//         position: relative;
-//         margin: 0 1.5em;
-//         cursor: pointer;
-
-//         a {
-//           @include navLinkStyles;
-//         }
-
-//         &:hover .DropdownMenu {
-//           opacity: 1;
-//           visibility: visible;
-//           transform: translateY(0);
-//         }
-//       }
-//     }
-
 //     .H2Right {
 //       color: $White;
 //       font-size: 2em;
-//     }
 
-//     .Leo {
-//       color: $Blue;
+//       .Leo {
+//         color: $Blue;
+//       }
 //     }
 //   }
-// }
+//   .LogoLink {
+//     text-decoration: none; /* Remove underline */
+//     color: inherit; /* Use the parent text color */
+//     cursor: pointer; /* Change cursor to pointer */
+    
+//     &:hover {
+//       text-decoration: underline; /* Optional hover effect */
+//     }
+//   }
 
-// /* Dropdown Menu Styles */
-// .Dropdown {
-//   .DropdownMenu {
-//     position: absolute;
-//     top: 100%;
-//     left: 0;
-//     background-color: $White;
-//     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+//   .Hamburger {
+//     display: none;
+//     cursor: pointer;
+
+//     span {
+//       display: block;
+//       width: 25px;
+//       height: 3px;
+//       background-color: $Blue;
+//       margin: 5px 0;
+//     }
+//   }
+
+//   .NavList {
+//     display: flex;
 //     list-style: none;
 //     margin: 0;
-//     padding: 0.5em 0;
-//     min-width: 200px;
-//     visibility: hidden;
-//     opacity: 0;
-//     transform: translateY(-10px);
-//     transition: opacity 0.3s ease, transform 0.3s ease;
 
 //     li {
-//       margin: 0;
-//       padding: 0.5em 1em;
+//       margin: 0 1.5em;
 
 //       a {
-//         @include navLinkStyles;
-//         display: block;
-//       }
+//         text-decoration: none;
+//         color: $Blue;
 
-//       &:hover {
-//         background-color: Grey;
+//         &:hover {
+//           color: grey;
+//         }
 //       }
 //     }
-//   }
-// }
 
-// /* Responsive Design */
-// @media only screen and (max-width: 768px) {
-//   .NavContainer {
-//     padding: 0 1em;
-
-//     .NavList {
+//     &.Active {
+//       display: flex;
 //       flex-direction: column;
-//       align-items: center;
+//       align-items: flex-start;
+//       width: 100%;
+//     }
+//   }
+
+//   .Dropdown {
+//     position: relative;
+
+//     .DropdownMenu {
+//       display: none;
+//       position: absolute;
+//       top: 100%;
+//       left: 0;
+//       background-color: $White;
+//       list-style: none;
+//       padding: 1em 0;
+//       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 
 //       li {
-//         margin: 0.5em 0;
+//         padding: 0.5em 1.5em;
+//       }
 
-//         .DropdownMenu {
-//           position: static;
-//           box-shadow: none;
-//           transform: translateY(0);
-//           visibility: visible;
-//           opacity: 1;
-//           padding: 0;
-//           background-color: transparent;
+//       li:hover {
+//         background-color: lightgrey;
+//       }
+//     }
 
-//           li {
-//             padding: 0.5em 0;
-//           }
+//     &.ActiveDropdown .DropdownMenu {
+//       display: block;
+//     }
+//   }
+
+//   @media (max-width: 768px) {
+//     .NavContainer {
+//       flex-direction: column;
+
+//       .NavList {
+//         display: none;
+
+//         &.Active {
+//           display: flex;
 //         }
+
+//         li {
+//           margin: 0.5em 0;
+//         }
+//       }
+//     }
+
+//     .Hamburger {
+//       display: block;
+//     }
+
+//     .Dropdown {
+//       .DropdownMenu {
+//         position: static;
+//         display: block;
+//         box-shadow: none;
+//         padding: 0;
+//       }
+
+//       li {
+//         padding: 0.5em 1em;
 //       }
 //     }
 //   }
@@ -134,7 +144,7 @@
 
   .NavContainer {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Default: space between for large screens */
     align-items: center;
     padding: 0 3em;
     border-bottom: 8px solid $Blue;
@@ -142,12 +152,15 @@
     .H2Right {
       color: $White;
       font-size: 2em;
-
+      text-align: center; /* Ensure proper centering on small screens */
+      margin: 0 auto; /* Center on small screens */
+      
       .Leo {
         color: $Blue;
       }
     }
   }
+
   .LogoLink {
     text-decoration: none; /* Remove underline */
     color: inherit; /* Use the parent text color */
@@ -228,21 +241,27 @@
     .NavContainer {
       flex-direction: column;
 
+      .H2Right {
+        order: 1; /* Ensure it's positioned first in the column layout */
+      }
+
+      .Hamburger {
+        display: block; /* Show hamburger menu on small screens */
+      }
+
       .NavList {
         display: none;
 
         &.Active {
           display: flex;
+          flex-direction: column;
+          align-items: center; /* Center align the navigation items */
         }
 
         li {
           margin: 0.5em 0;
         }
       }
-    }
-
-    .Hamburger {
-      display: block;
     }
 
     .Dropdown {
