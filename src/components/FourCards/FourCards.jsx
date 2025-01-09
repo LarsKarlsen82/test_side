@@ -25,7 +25,7 @@ const FourCards = () => {
         <h2>Inussuk-IT</h2>
           <p>We few, we happy few</p>
           <br />
-          <p>Heller ikke os.</p>
+          <p>Her i Inussuk-IT finder vi det vigtigt at vores brugere kan tilgå vores services.</p>
         
         </div>
       </div>
